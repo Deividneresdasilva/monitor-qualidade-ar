@@ -1,0 +1,21 @@
+PINAGEM DO PROJETO - Arduino UNO
+
+DHT22 (Sensor de Temperatura e Umidade)
+- VCC → 5V (vermelho)
+- SDA (DATA) → Pino 4 (verde)
+- GND → GND (preto)
+
+POTENCIÔMETRO (Simulação de Sensor de Gás)
+- VCC → 5V (vermelho)
+- SIG → A0 (laranja)
+- GND → GND (preto)
+
+LED RGB (Feedback Visual)
+- R → Pino 5 (vermelho)
+- G → Pino 6 (verde)
+- B → Pino 7 (azul)
+- GND (COM) → GND (preto)
+
+BROKER MQTT
+Host: broker.hivemq.com
+Port: 1883
