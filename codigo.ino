@@ -17,6 +17,11 @@ void setup() {
   pinMode(LED_B, OUTPUT);
   dht.begin();
   Serial.println("Sistema iniciando...");
+  
+  digitalWrite(LED_R, LOW);
+  digitalWrite(LED_G, HIGH);
+  digitalWrite(LED_B, HIGH);
+  
   delay(2000);
 }
 
@@ -38,22 +43,22 @@ void loop() {
     Serial.println(gas);
     
     if (gas > 600) {
-      setLED(255, 0, 0);
+      digitalWrite(LED_R, LOW);
+      digitalWrite(LED_G, HIGH);
+      digitalWrite(LED_B, HIGH);
       Serial.println("CRITICO");
     } 
     else if (gas > 350) {
-      setLED(255, 255, 0);
+      digitalWrite(LED_R, LOW);
+      digitalWrite(LED_G, LOW);
+      digitalWrite(LED_B, HIGH);
       Serial.println("ALERTA");
     } 
     else {
-      setLED(0, 255, 0);
+      digitalWrite(LED_R, HIGH);
+      digitalWrite(LED_G, LOW);
+      digitalWrite(LED_B, HIGH);
       Serial.println("NORMAL");
     }
   }
-}
-
-void setLED(int r, int g, int b) {
-  analogWrite(LED_R, r);
-  analogWrite(LED_G, g);
-  analogWrite(LED_B, b);
 }
